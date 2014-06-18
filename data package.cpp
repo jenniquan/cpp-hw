@@ -6,6 +6,7 @@
 // 3. back calculate bill to data package
 
 #include <iostream>
+#include <iomanip>
 #include <cmath>
 using namespace std;
 
@@ -32,8 +33,8 @@ int main ()
 				cout << "Bill: $30.00\n";
 			else {
 				mData = data - 4000;
-				bill = (mData * 0.3) + 30;  // make that end at 0.00
-				cout << "Bill: $" << bill << endl;				
+				bill = (mData * 0.3) + 30;  
+				cout << setprecision(2) << fixed << "Bill: $" << bill << endl;				
 			}
 		}
 		else if (package == 'B' or package == 'b'){
@@ -42,7 +43,7 @@ int main ()
 			else{
 				mData = data - 10000;
 				bill = (mData * 0.2) + 50;
-				cout << "Bill: $" << bill << endl; // make this end at 0.00
+				cout << setprecision(2) << fixed << "Bill: $" << bill << endl;
 			}
 		}
 		else if (package == 'c' or package == 'C')
@@ -59,7 +60,7 @@ int main ()
 			mData = data- 10000;
 			bBill = (mData * 0.2) + 50;
 			savings = bBill-70;
-			cout << "Savings: " << savings << endl;
+			cout << setprecision(2) << fixed << "Savings: " << savings << endl;
 		}
 	}
 	else if (menu == 3){
@@ -73,9 +74,7 @@ int main ()
 		else if (bill == 70)
 			cout << "You have package C. \n";
 		else
-			cout << "You are not using our data packages.";
-		
-
+			cout << "You are not using our data packages.";		
 	}
 	else
 		cout << "That is not a valid menu option.";	
